@@ -9,25 +9,24 @@ def profane_content(line, explicit_words):
 
 def check_word_stats(wdict, line):
     for x in map(lambda(x): x.lower(), line.split(' ')):
-        if (x in wdict):
-            wdict[x] = wdict[x] + 1
-        else:
-            wdict[x] = 1
+        if x in wdict:
+            wdict[x] = wdict.get(x, 0) + 1
     return wdict
 
 def main(argv):
-    if (len(argv) != 2):
+    if len(argv) != 2:
         print 'Usage: python process_list.py <list-to-process> <explicit-word-list>'
         sys.exit(1)
 
     file_to_process = argv[0]
-    lines = open(file_to_process).read().split('\r')[:-1]
+    lines = open(file_to_process).read().splitlines()
 
     explicit_words_file = argv[1]
-    explicit_words = set(open(explicit_words_file).read().split('\n')[:-1])
+    explicit_words = set(open(explicit_words_file).read().splitlines())
 
     splits = []
-    for l in lines: splits.append(l.split('\t'))
+    for l in lines:
+        splits.append(l.split('\t'))
 
     profane_splits = []
     not_profane_splits = []
