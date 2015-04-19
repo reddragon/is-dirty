@@ -10,7 +10,7 @@ Essentially the algorithm has a corpus of explicit words (I have supplied a pred
 
 Which ever lines had potentially explicit content, are written to a new file with the same name as the original file with list of sentences to inspect, but with a '.porny' extension added in the end. Similarly, all the supposedly clean lines are added to a new file with the same name as the original file, but with a '.regular' extension added in the end.
 
-I have added a sample list of about 1000 sentences as well as an example. The sample usage should be like:
+I have added a sample list of about 2500 sentences as well as an example. The sample usage should be like:
 
 
 ## Usage
