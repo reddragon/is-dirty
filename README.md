@@ -6,7 +6,7 @@ A very naive classifier to figure out if a sentence contains dirty words. Works 
 I quickly wrote up this script to figure out a reasonable approximation of how many results in a given list were porny/explicit. I couldn't find a simple enough script to just plug-and-play. So I hacked up this. 
 
 ## How it works
-Essentially the algorithm has a corpus of explicit words (I have supplied a predominantly English corpus, but I added enough popular expletives in other languages). The script expects a list of sentences (with a \r on each line end. You can quickly change the code to expect \n for your case. I was copying from Excel and it introduces \r on each line), and then checks if there are any explicit words as a substring of each line. 
+Essentially the algorithm has a corpus of explicit words (I have supplied a predominantly English corpus, but I added enough popular expletives in other languages). The script expects a list of sentences, one on each line, and then checks if there are any explicit words as a substring of each line. (Check the caveats section)
 
 Which ever lines had potentially explicit content, are written to a new file with the same name as the original file with list of sentences to inspect, but with a '.porny' extension added in the end. Similarly, all the supposedly clean lines are added to a new file with the same name as the original file, but with a '.regular' extension added in the end.
 
