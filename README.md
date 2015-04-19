@@ -1,5 +1,5 @@
 # is-dirty
-A naive classifier to figure out if a sentence contains dirty words. Works for English well, and can handle popular Spanish, Indonesian, Arabic and Hindi explicit words.
+A very naive classifier to figure out if a sentence contains dirty words. Works for English well, and can handle popular Spanish, Indonesian, Arabic and Hindi explicit words.
 
 
 ## Motivation
@@ -23,3 +23,9 @@ python process_list.py sample_sentences explicit_words
 - Expect a lot of false positives, so use cautiously. Example, "Classy party" would be considered a dirty sentence because of the word "ass" in it
 - It does not understand context. "Sex education" might be fairly innocent and a purely intended in an academic way, would trigger off the dirty classifier. 
 - Corpus is small. I created a lot of the corpus by hand. See the comment in the code to uncomment the frequency analysis printing part to get an idea of which words are getting by.
+
+
+## TODO
+- To fix the problem with the word 'classy' as I described above. Detect on the basis of punctuation (' ', ',', '-', etc.)
+- It will be nice to train a model where co-occurences of words in a string can be used to signal if a particular sentence might be dirty. The return value will be a value in the range [0, 1] instead of a boolean.
+- Connect with Google Translate to instantly get translations 
