@@ -9,8 +9,7 @@ def profane_content(line, explicit_words):
 
 def check_word_stats(wdict, line):
     for x in map(lambda(x): x.lower(), line.split(' ')):
-        if x in wdict:
-            wdict[x] = wdict.get(x, 0) + 1
+		wdict[x] = wdict.get(x, 0) + 1
     return wdict
 
 def main(argv):
